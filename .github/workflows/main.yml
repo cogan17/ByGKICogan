@@ -136,7 +136,7 @@ on:
 
 jobs:
   resolve-sources:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       nomount_commit: ${{ steps.resolve.outputs.nomount_commit }}
       kernelsu_commit: ${{ steps.resolve.outputs.kernelsu_commit }}
