@@ -136,7 +136,7 @@ on:
 
 jobs:
   resolve-sources:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       nomount_commit: ${{ steps.resolve.outputs.nomount_commit }}
       kernelsu_commit: ${{ steps.resolve.outputs.kernelsu_commit }}
@@ -981,7 +981,7 @@ jobs:
       queue: max
       cancel-in-progress: false
     if: "github.event_name == 'workflow_dispatch' && !inputs.test_release_notes && inputs.commit_mode == 'update'"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       actions: read
       contents: write
@@ -1034,7 +1034,7 @@ jobs:
         git push
   rej:
     if: "github.event_name == 'workflow_dispatch' && !inputs.test_release_notes && always()"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       actions: read
       contents: read
